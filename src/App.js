@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './app.module.css'
+import Tabs from "./components/Tabs/Tabs";
+import Tab from "./components/Tabs/Tab";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={styles.wrap}>
+            <div className={styles.content}>
+                <Tabs>
+                    <Tab title={'Home'}>
+                        This is home
+                    </Tab>
+                    <Tab title={'Posts'}>
+                        This is posts
+                    </Tab>
+                    <Tab title={'Links'}>
+                        This is links
+                    </Tab>
+                </Tabs>
+            </div>
+        </div>
+    );
 }
 
 export default App;

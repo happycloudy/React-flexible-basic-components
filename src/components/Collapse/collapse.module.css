@@ -1,0 +1,104 @@
+:root {
+    --collapse-border-radius: 10px;
+    --collapse-border: 1px solid #444;
+
+    --collapse-title-height: 40px;
+    --collapse-title-background: #eee;
+    --collapse-title-color: #000;
+    --collapse-title-font: 22px;
+
+    --collapse-arrow-size: 20px;
+    --collapse-arrow-color: #000;
+
+    --collapse-content-background: #fff;
+    --collapse-content-color: #000;
+    --collapse-content-font: 18px;
+}
+
+
+.collapse {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+.collapseTitle {
+    height: var(--collapse-title-height);
+    background: var(--collapse-title-background);
+    color: var(--collapse-title-color);
+    font-size: var(--collapse-title-font);
+    width: 100%;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--collapse-border-radius);
+    animation: titleRevealAnimation 1s;
+    transition: 0.5s;
+}
+
+.collapseTitle.active {
+    border-radius: var(--collapse-border-radius) var(--collapse-border-radius) 0 0;
+}
+
+
+@keyframes titleRevealAnimation {
+    from {
+        border-radius: 0;
+        width: 80%;
+        opacity: 0;
+    }
+    to {
+        border-radius: var(--collapse-border-radius);
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+
+.arrowIcon {
+    height: var(--collapse-arrow-size);
+    width: var(--collapse-arrow-size);
+    fill: var(--collapse-arrow-color);
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+.arrowIcon.active {
+    transform: rotate(270deg);
+}
+
+
+.collapseContent {
+    background: var(--collapse-content-background);
+    color: var(--collapse-content-color);
+    font-size: var(--collapse-content-font);
+    border-bottom-left-radius: var(--collapse-border-radius);
+    border-bottom-right-radius: var(--collapse-border-radius);
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.collapseContent.active {
+    animation: contentRevealAnimation 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes contentRevealAnimation {
+    from {
+        width: 95%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.text{
+    padding: 10px 30px;
+}
+
