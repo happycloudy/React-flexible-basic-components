@@ -1,0 +1,44 @@
+:root {
+    --autocomplete-padding: 0 0 0 10px;
+    --autocomplete-input-height: 30px;
+    --autocomplete-input-border: 2px solid #000;
+
+    --autocomplete-content-border: 2px solid #000;
+    --autocomplete-content-background: #fff;
+    --autocomplete-content-item-padding: 10px;
+    --autocomplete-content-item-border: 1px solid;
+}
+
+.wrap {
+    width: 100%;
+}
+
+.wrap > .input {
+    width: 100%;
+    outline: none;
+    height: var(--autocomplete-input-height);
+    padding: var(--autocomplete-padding);
+}
+
+.wrap > .input:focus {
+    border-bottom: 1px solid #000;
+    border: var(--autocomplete-input-border);
+}
+
+.result {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    border: var(--autocomplete-content-border);
+    background: var(--autocomplete-content-background);
+}
+
+.resultItem {
+    padding: var(--autocomplete-content-item-padding);
+    border: var(--autocomplete-content-item-border);
+    border-left: none;
+    border-right: none;
+}

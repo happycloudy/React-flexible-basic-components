@@ -21,4 +21,6 @@ html, body {
     width: 80vw;
     background: #95a5a6;
     padding: 30px;
+    display: flex;
+    justify-content: center;
 }
